@@ -10,8 +10,30 @@ h1 {
     margin-block-end: 0.30em;
 }
 
+h2 {
+    margin-left: 12px;
+}
+
+h3 {
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+}
+
+p {
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+}
+
 header {
     box-shadow: 1px 3px 9px 1px rgb(140 140 140 / 10%);
+}
+
+.header-logos {
+    cursor: pointer;
+}
+
+.header-logos:hover {
+    filter: brightness(95%);
 }
 
 .nav-bar {
@@ -30,6 +52,7 @@ header {
 .nav-right img {
     height: 24px;
     padding-right: 46px;
+    cursor: pointer;
 }
 
 .info-top {
@@ -73,22 +96,41 @@ header {
     margin-left: 200px;
 }
 
-.impressum {
-    margin-right: 200px;
-    margin-left: 200px;
-    margin-bottom: 50px;
+.dish {
+    box-sizing: border-box;
+    border: 1px solid #68888e3d;
+    margin: 18px;
+    align-items: flex-start;
+    border-radius: 10px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    /* background-image: url(img/plus_01.png);
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: 97% 17%; */
 }
 
-.shopping-cart {
-    display: block !important;
-    position: sticky;
-    top: -10px;
+.dish img {
+    float: right;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+}
+
+.impressum {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.basket {
     flex-basis: 15%;
     flex-grow: 0;
-    height: 100vh;
     padding-left: 32px;
     padding-right: 32px;
-    width: 100%;
     position: relative;
     flex-shrink: 0;
     width: 350px;
@@ -129,6 +171,8 @@ header {
     font-weight: 500;
     margin-right: 8px;
     overflow: hidden;
+    padding-top: 32px;
+    padding-bottom: 12px;
 }
 
 .info-slider a {
@@ -143,11 +187,20 @@ header {
 
 .footer {
     width: 100%;
-    height: 200px;
+    height: 100px;
     background-color: #262626;
     color: white;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
 }
 
-.neu {
-    border: #242E30;
+.footer a {
+    color: white;
+    text-decoration: none;
+    padding-right: 12px;
+    font-size: 14px;
 }
