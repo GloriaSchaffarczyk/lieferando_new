@@ -7,6 +7,7 @@ let basketDishes = [];
 let basketPrices = [];
 let basketAmounts = [];
 
+
 function renderDishes() {
     let content = document.getElementById('content')
     content.innerHTML = '';
@@ -21,6 +22,7 @@ function renderDishes() {
     renderBasket();
 }
 
+
 function generateRenderDishesHTML(dish, detail, price, i) {
     return `
     <div class="dish">
@@ -32,6 +34,7 @@ function generateRenderDishesHTML(dish, detail, price, i) {
     `;
 }
 
+
 function renderBasket() {
 
     if (basketDishes.length >= 1) {
@@ -40,6 +43,7 @@ function renderBasket() {
         renderEmptyBasket();
     }
 }
+
 
 function renderEmptyBasket() {
     let emptyBasket = document.getElementById('basket');
@@ -51,8 +55,9 @@ function renderEmptyBasket() {
         <p>Dein Warenkorb ist leer<p>`;
 }
 
+
 function renderFullBasket(sum, finalSum) {
-    let fullBasket = document.getElementById('basket');
+    let fullBasket = document.getElementById('inner-basket');
     fullBasket.innerHTML = '';
 
     for (let i = 0; i < basketDishes.length; i++) {
@@ -63,7 +68,7 @@ function renderFullBasket(sum, finalSum) {
         // forgot to put the plus before =
         fullBasket.innerHTML += `
         <h2>Warenkorb</h2>
-        <div class="inner-cart">
+        <div class="inner-basket">
             <div class="amount">${basketAmount}</div>
             <div class="product">
                 <h3>${basketDish}</h3>
@@ -74,7 +79,7 @@ function renderFullBasket(sum, finalSum) {
                 <img src="" alt=""> <img src="" alt="">
             </div>
         </div>
-        <div class="outer-cart">
+        <div class="outer-basket">
             <div class="sum" id="basket-sum">
                 <div class="sum-left">
                     <p>Zwischensumme</p>
@@ -96,6 +101,7 @@ function renderFullBasket(sum, finalSum) {
     updateBasket();
 }
 
+
 function addToBasket(i) {
     let index = basketDishes.indexOf(basketDishes[i]);
 
@@ -113,15 +119,43 @@ function addToBasket(i) {
     updateBasket();
 }
 
+
 function updateBasket() {
     let sum = 0;
+    let delivery = 2.95;
+    let finalSum = 0;
 
     for (let i = 0; i < prices.length; i++) {
-        sum += prices[i] * amounts[i];
+        finalSum += prices[i];
+        if (finalSum < 15) {
+            delivery = 2.50
+        } else {
+            delivery = 0;
+        }
 
     }
 
-    let finalSum = sum + 2.95;
+    finalSum = sum + delivery;
+    document.getElementById('basket-sum').innerHTML = sumHTML();
+}
 
-    document.getElementById('basket-sum').innerHTML = sum;
+
+function sumHTML(sum, delivery, finalSum) {
+    return `
+    <table class="tableSum">
+        <tr>
+          <td>Zwischensumme</td>
+          <td>${sum.toFixed(2).replace('.',',')} â‚¬</td>
+        </tr>
+        <tr>
+          <td>Lieferkosten</td>
+          <td>${delivery.toFixed(2).replace('.',',')} â‚¬</td>
+        </tr>
+        <tr>
+          <td>Gesamtsumme</td>
+          <td>${finalSum.toFixed(2).replace('.',',')} â‚¬</td>
+        </tr>
+      </table> <br>
+      <button class="buttonPay">Bezahlen (${finalSum.toFixed(2).replace('.',',')} â‚¬)</button>
+    `;
 }

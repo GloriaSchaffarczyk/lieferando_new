@@ -3,6 +3,7 @@ body {
     scroll-behavior: smooth;
     color: #242E30;
     font-family: 'Heebo', sans-serif;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -183,6 +184,18 @@ header {
 .info-slider img {
     height: 16px;
     width: 16px;
+}
+
+.tableSum table {
+    width: 312px;
+}
+
+.tableSum tr td:nth-child(2) {
+    text-align: right;
+}
+
+.tableSum table tr:last-child {
+    font-weight: 600;
 }
 
 .footer {
