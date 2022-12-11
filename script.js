@@ -109,14 +109,9 @@ function addToBasket(i) {
         basketDishes.push(dishes[i]) //pushed into the wrong arrays
         basketPrices.push(prices[i])
         basketAmounts.push(Number(1));
-
-        renderBasket();
-
     } else {
         basketAmounts[index]++;
     }
-    renderBasket();
-    updateBasket();
 }
 
 
