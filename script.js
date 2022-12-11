@@ -140,17 +140,17 @@ function sumHTML(sum, delivery, finalSum) {
     <table class="tableSum">
         <tr>
           <td>Zwischensumme</td>
-          <td>${sum.toFixed(2).replace('.',',')} â‚¬</td>
+          <td>${sum.toFixed(2).replace('.', ',')} â‚¬</td>
         </tr>
         <tr>
           <td>Lieferkosten</td>
-          <td>${delivery.toFixed(2).replace('.',',')} â‚¬</td>
+          <td>${delivery.toFixed(2).replace('.', ',')} â‚¬</td>
         </tr>
         <tr>
           <td>Gesamtsumme</td>
-          <td>${finalSum.toFixed(2).replace('.',',')} â‚¬</td>
+          <td>${finalSum.toFixed(2).replace('.', ',')} â‚¬</td>
         </tr>
       </table> <br>
-      <button class="buttonPay">Bezahlen (${finalSum.toFixed(2).replace('.',',')} â‚¬)</button>
+      <button class="buttonPay">Bezahlen (${finalSum.toFixed(2).replace('.', ',')} â‚¬)</button>
     `;
 }
