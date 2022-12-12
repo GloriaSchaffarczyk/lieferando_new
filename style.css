@@ -129,30 +129,29 @@ header {
 }
 
 .basket-div {
-    margin-top: 50px;
-    flex-basis: 15%;
+    margin-top: 12px;
+    flex-basis: 20%;
     flex-grow: 0;
     padding-left: 32px;
     padding-right: 32px;
     position: relative;
     flex-shrink: 0;
-    width: 350px;
     box-shadow: -11px 7px 15px 1px rgba(140, 140, 140, 0.15);
     text-align: center;
 }
 
-.basket {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.basket img {
+    width: 48px;
+    height: 48px;
     justify-content: center;
+    align-items: center;
 }
 
 .basketSum {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .basket-left {
@@ -163,15 +162,45 @@ header {
     text-align: end;
 }
 
+.basket-top {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.basket-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 21px;
+    margin-bottom: 24px;
+}
+
+.basket-buttons button {
+    border: solid 1px rgba(211, 211, 211, 0);
+    height: 42px;
+    width: 42px;
+    font-size: 20px;
+    margin-left: 8px;
+    border-radius: 25px;
+}
+.top-left {
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    justify-content: start;
+}
+
 .order-button {
     background-color: #f36805;
     color: white;
-    font-weight: bolder;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 20px;
     border-radius: 50px;
-    padding: 20px;
+    padding: 8px;
     border:solid 1px #f36805;
     cursor: pointer;
+    width: 300px;
 }
 
 .order-button:hover {

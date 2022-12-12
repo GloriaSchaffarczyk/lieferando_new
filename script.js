@@ -31,7 +31,7 @@ function generateRenderDishesHTML(dish, detail, price, i) {
     <img src="img/plus_01.png" onclick="addToBasket(${i})">
     <h3>${dish}</h3> 
     <p>${detail}</p><br>
-    <span>${price} €</span>
+    <span>${price.toFixed(2).replace('.', ',')} €</span>
     </div>
     `;
 }
@@ -52,8 +52,8 @@ function renderEmptyBasket() {
     emptyBasket.innerHTML = '';
     emptyBasket.innerHTML = `
         <img class="shopping-bag" src="img/shopping-bag-2-48.png" alt="Logo">
-        <h2>Lege etwas in den Warenkorb</h2>
-        <p>Dein Warenkorb ist leer<p>`;
+        <h2>Fülle deinen Warenkorb</h2>
+        <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.<p>`;
 }
 
 
@@ -73,16 +73,25 @@ function renderFullBasket() {
 
 function basketHTML(basketAmount, basketPrice, basketDish, i) {
     return `
-        <div class="amount">${basketAmount}</div>
-        <div class="product">
-            <h3>${basketDish}</h3>
-            <p>Anmerkung hinzufügen</p>
+    <div class="basket-top">
+        <div class="top-left">
+            <div class="amount"><h4>${basketAmount}</h4></div>
+            <div class="product"><h4>${basketDish}</h4></div>
         </div>
-        <div class="price">
-            <h2>${basketPrice} €</h2>
-            <img src="" alt=""> <img src="" alt="">
+        <div class="top-right">
+            <div class="price">
+                <p>${basketPrice.toFixed(2).replace('.', ',')} €</p>
+            </div>
         </div>
-    `
+    </div>
+    <div class="basket-bottom">
+        <p>Anmerkung hinzufügen</p>
+        <div class="basket-buttons">
+            <button class="minus id="minus">-</button>
+            <button class="plus" id="plus">+</button>
+        </div>
+    </div>
+    `;
 }
 
 
@@ -135,6 +144,6 @@ function checkCalc(sum, finalSum) {
     </div>
     
     <div>
-        <button onclick="order()" class="order-button">Bestellung abschließen</button> 
+        <button onclick="order()" class="order-button">Bezahlen</button> 
     </div>`
 }
