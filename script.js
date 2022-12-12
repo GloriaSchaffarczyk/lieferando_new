@@ -7,6 +7,8 @@ let basketDishes = [];
 let basketPrices = [];
 let basketAmounts = [];
 
+let deliveryPrice = 2.99.toFixed(2).replace('.', ',');
+
 
 function renderDishes() {
     let content = document.getElementById('content')
@@ -49,56 +51,38 @@ function renderEmptyBasket() {
     let emptyBasket = document.getElementById('basket');
     emptyBasket.innerHTML = '';
     emptyBasket.innerHTML = `
-        <h2>Warenkorb</h2>
         <img class="shopping-bag" src="img/shopping-bag-2-48.png" alt="Logo">
         <h2>Lege etwas in den Warenkorb</h2>
         <p>Dein Warenkorb ist leer<p>`;
 }
 
 
-function renderFullBasket(sum, finalSum) {
-    let fullBasket = document.getElementById('inner-basket');
+function renderFullBasket() {
+    let fullBasket = document.getElementById('basket');
     fullBasket.innerHTML = '';
 
     for (let i = 0; i < basketDishes.length; i++) {
-        const basketAmount = basketAmounts[i];
-        const basketPrice = basketPrices[i];
-        const basketDish = basketDishes[i];
+        let basketAmount = basketAmounts[i];
+        let basketPrice = basketPrices[i];
+        let basketDish = basketDishes[i];
 
-        // forgot to put the plus before =
-        fullBasket.innerHTML += `
-        <h2>Warenkorb</h2>
-        <div class="inner-basket">
-            <div class="amount">${basketAmount}</div>
-            <div class="product">
-                <h3>${basketDish}</h3>
-                <p>Anmerkung hinzufügen</p>
-            </div>
-            <div class="price">
-                <h2>${basketPrice} €</h2>
-                <img src="" alt=""> <img src="" alt="">
-            </div>
-        </div>
-        <div class="outer-basket">
-            <div class="sum" id="basket-sum">
-                <div class="sum-left">
-                    <p>Zwischensumme</p>
-                    <p>Lieferkosten</p>
-                    <p>Gesamt</p>
-                </div>
-                <div class="sum-right">
-                    <p>${sum} €</p>
-                    <p>2.95 €</p>
-                    <p>${finalSum} €</p>
-                </div>
-            </div>
-            <div>
-                <button>Bezahlen (SUMME)</button>
-            </div>
-        </div>
-        `;
+        fullBasket.innerHTML += basketHTML(basketAmount, basketPrice, basketDish, i);
     }
     updateBasket();
+}
+
+function basketHTML(basketAmount, basketPrice, basketDish, i) {
+    return `
+        <div class="amount">${basketAmount}</div>
+        <div class="product">
+            <h3>${basketDish}</h3>
+            <p>Anmerkung hinzufügen</p>
+        </div>
+        <div class="price">
+            <h2>${basketPrice} €</h2>
+            <img src="" alt=""> <img src="" alt="">
+        </div>
+    `
 }
 
 
@@ -106,51 +90,50 @@ function addToBasket(i) {
     let index = basketDishes.indexOf(basketDishes[i]);
 
     if (index == -1) {
-        basketDishes.push(dishes[i]) //pushed into the wrong arrays
-        basketPrices.push(prices[i])
+        basketDishes.push(dishes[i]);
+        basketPrices.push(prices[i]);
         basketAmounts.push(Number(1));
     } else {
         basketAmounts[index]++;
     }
+    renderBasket();
+    updateBasket();
 }
 
 
-function updateBasket() {
+function updateBasket(finalSum) {
+    let basketSum = document.getElementById('sum');
     let sum = 0;
-    let delivery = 2.95;
-    let finalSum = 0;
 
     for (let i = 0; i < prices.length; i++) {
-        finalSum += prices[i];
-        if (finalSum < 15) {
-            delivery = 2.50
-        } else {
-            delivery = 0;
-        }
+        let price = basketPrices[i];
+        let amount = basketAmounts[i];
 
+        sum += (price * amount);
     }
 
-    finalSum = sum + delivery;
-    document.getElementById('basket-sum').innerHTML = sumHTML();
+    finalSum = sum + 2.99;
+    basketSum.innerHTML = checkCalc(sum, finalSum);
 }
 
-
-function sumHTML(sum, delivery, finalSum) {
+function checkCalc(sum, finalSum) {
     return `
-    <table class="tableSum">
-        <tr>
-          <td>Zwischensumme</td>
-          <td>${sum.toFixed(2).replace('.', ',')} â‚¬</td>
-        </tr>
-        <tr>
-          <td>Lieferkosten</td>
-          <td>${delivery.toFixed(2).replace('.', ',')} â‚¬</td>
-        </tr>
-        <tr>
-          <td>Gesamtsumme</td>
-          <td>${finalSum.toFixed(2).replace('.', ',')} â‚¬</td>
-        </tr>
-      </table> <br>
-      <button class="buttonPay">Bezahlen (${finalSum.toFixed(2).replace('.', ',')} â‚¬)</button>
-    `;
+    <div class="basketSum" id="basketSum">
+    <div class="basket-left">
+       <span> 
+            Zwischensumme:  <br>
+            Lieferkosten:   <br>
+            <b>Gesamtkosten:</b>   <br> 
+        </span>
+    </div>
+    <div class="basket-right">
+           <span>${sum.toFixed(2).replace('.', ',')} € <br>
+            ${deliveryPrice} € <br>
+            <b> ${finalSum.toFixed(2).replace('.', ',')} € </b> <br> </span>
+        </div>  
+    </div>
+    
+    <div>
+        <button onclick="order()" class="orderButton"> Bestellung abschlieÃŸen </button> 
+    </div>`
 }
