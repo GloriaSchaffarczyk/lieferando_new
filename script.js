@@ -105,7 +105,7 @@ function updateBasket(finalSum) {
     let basketSum = document.getElementById('sum');
     let sum = 0;
 
-    for (let i = 0; i < prices.length; i++) {
+    for (let i = 0; i < basketPrices.length; i++) {
         let price = basketPrices[i];
         let amount = basketAmounts[i];
 
@@ -119,21 +119,22 @@ function updateBasket(finalSum) {
 function checkCalc(sum, finalSum) {
     return `
     <div class="basketSum" id="basketSum">
-    <div class="basket-left">
-       <span> 
+        <div class="basket-left">
+        <span>
             Zwischensumme:  <br>
             Lieferkosten:   <br>
             <b>Gesamtkosten:</b>   <br> 
         </span>
-    </div>
-    <div class="basket-right">
-           <span>${sum.toFixed(2).replace('.', ',')} € <br>
-            ${deliveryPrice} € <br>
-            <b> ${finalSum.toFixed(2).replace('.', ',')} € </b> <br> </span>
+        </div>  
+        <div class="basket-right">
+            <span>${sum.toFixed(2).replace('.', ',')} €<br>
+            ${deliveryPrice} €<br>
+            <b>${finalSum.toFixed(2).replace('.', ',')} €</b> <br> 
+            </span>
         </div>  
     </div>
     
     <div>
-        <button onclick="order()" class="orderButton"> Bestellung abschlieÃŸen </button> 
+        <button onclick="order()" class="order-button">Bestellung abschließen</button> 
     </div>`
 }

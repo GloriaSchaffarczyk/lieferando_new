@@ -148,6 +148,36 @@ header {
     justify-content: center;
 }
 
+.basketSum {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.basket-left {
+    text-align: start;
+}
+
+.basket-right {
+    text-align: end;
+}
+
+.order-button {
+    background-color: #f36805;
+    color: white;
+    font-weight: bolder;
+    font-size: 14px;
+    border-radius: 50px;
+    padding: 20px;
+    border:solid 1px #f36805;
+    cursor: pointer;
+}
+
+.order-button:hover {
+    background-color: #f34c05;
+}
+
 .header-img {
     background-image: url(img/cookforyou_04.jpg);
     background-position: center;
