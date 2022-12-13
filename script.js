@@ -87,8 +87,8 @@ function basketHTML(basketAmount, basketPrice, basketDish, i) {
     <div class="basket-bottom">
         <p>Anmerkung hinzufügen</p>
         <div class="basket-buttons">
-            <button class="minus id="minus">-</button>
-            <button class="plus" id="plus">+</button>
+            <button class="minus id="minus" onclick=decreaseAmount(${i})>-</button>
+            <button class="plus" id="plus" onclick=increaseAmount(${i})>+</button>
         </div>
     </div>
     `;
@@ -146,4 +146,22 @@ function checkCalc(sum, finalSum) {
     <div>
         <button onclick="order()" class="order-button">Bezahlen</button> 
     </div>`
+}
+
+function increaseAmount(i) {
+    if (basketAmounts[i] >= 1) {
+        basketAmounts[i]++;
+    }
+    renderBasket();
+}
+
+function decreaseAmount(i) {
+    if (basketAmounts[i] > 1) {
+        basketAmounts[i]--;
+    } else {
+        basketDishes.splice(i, 1);
+        basketPrices.splice(i, 1);
+        basketAmounts.splice(i, 1);
+    }
+    renderBasket();
 }
