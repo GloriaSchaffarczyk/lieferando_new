@@ -148,14 +148,14 @@ function checkCalc(sum, finalSum) {
     </div>`
 }
 
-function increaseAmount(i) {
+function increaseAmount(i) { // forgot i
     if (basketAmounts[i] >= 1) {
         basketAmounts[i]++;
     }
     renderBasket();
 }
 
-function decreaseAmount(i) {
+function decreaseAmount(i) { // forgot i
     if (basketAmounts[i] > 1) {
         basketAmounts[i]--;
     } else {
