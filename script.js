@@ -165,3 +165,7 @@ function decreaseAmount(i) { // forgot i
     }
     renderBasket();
 }
+
+function order() {
+    alert("Vielen Dank für Ihre Bestellung. Sie werden nun zu PayPal weitergeleitet.");
+}
