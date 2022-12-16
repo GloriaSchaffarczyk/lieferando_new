@@ -21,6 +21,10 @@ p {
     margin-block-end: 0.2em;
 }
 
+.d-none {
+    display: none;
+}
+
 header {
     box-shadow: 1px 3px 9px 1px rgb(140 140 140 / 10%);
 }
@@ -286,4 +290,8 @@ header {
     text-decoration: none;
     padding-right: 12px;
     font-size: 14px;
+}
+
+@media (min-width: 1000px) {
+
 }
