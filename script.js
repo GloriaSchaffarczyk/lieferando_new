@@ -9,7 +9,6 @@ let basketAmounts = [];
 
 let deliveryPrice = 2.99.toFixed(2).replace('.', ',');
 
-
 function renderDishes() {
     let content = document.getElementById('content')
     content.innerHTML = '';
@@ -24,7 +23,6 @@ function renderDishes() {
     renderBasket();
 }
 
-
 function generateRenderDishesHTML(dish, detail, price, i) {
     return `
     <div class="dish">
@@ -36,7 +34,6 @@ function generateRenderDishesHTML(dish, detail, price, i) {
     `;
 }
 
-
 function renderBasket() {
 
     if (basketDishes.length >= 1) {
@@ -46,7 +43,6 @@ function renderBasket() {
     }
 }
 
-
 function renderEmptyBasket() {
     let emptyBasket = document.getElementById('basket');
     emptyBasket.innerHTML = '';
@@ -55,7 +51,6 @@ function renderEmptyBasket() {
         <h2>Fülle deinen Warenkorb</h2>
         <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.<p>`;
 }
-
 
 function renderFullBasket() {
     let fullBasket = document.getElementById('basket');
@@ -94,7 +89,6 @@ function basketHTML(basketAmount, basketPrice, basketDish, i) {
     `;
 }
 
-
 function addToBasket(i) {
     let index = basketDishes.indexOf(basketDishes[i]);
 
@@ -108,7 +102,6 @@ function addToBasket(i) {
     renderBasket();
     updateBasket();
 }
-
 
 function updateBasket(finalSum) {
     let basketSum = document.getElementById('sum');
@@ -169,8 +162,3 @@ function decreaseAmount(i) { // forgot i
 function order() {
     alert("Vielen Dank für Ihre Bestellung. Sie werden nun zu PayPal weitergeleitet.");
 }
-
-function hideBasket() {
-    const basketDiv = document.getElementById('basket-div').classList;
-    basketDiv.add('d-none');
-    }
