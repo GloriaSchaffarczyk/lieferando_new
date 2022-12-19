@@ -1,119 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cookforyou</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <link
-      rel="shortcut icon"
-      href="img/delivery-food-32.png"
-      type="image/x-icon"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body onload="renderDishes()">
-    <header>
-      <div class="nav-bar">
-        <div class="nav-left">
-          <img src="img/CookForYou.png" alt="" />
-        </div>
-        <div class="nav-center">
-          <h3>Speisekarte</h3>
-        </div>
-        <div class="nav-right">
-          <img src="img/german-round.png" alt="" />
-          <img src="img/menu-4-48 (1).png" alt="" />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookforyou</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <link rel="shortcut icon" href="img/delivery-food-32.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body onload="renderDishes()">
+  <header>
+    <div class="nav-bar">
+      <div class="nav-left">
+        <img src="img/CookForYou.png" alt="" />
       </div>
-    </header>
-    <div class="main">
-      <div class="menu">
-        <div class="content-top">
-          <div class="header-img">
-            <div class="header-logo">
-              <img src="img/couch-potato4.png" alt="" />
-            </div>
-          </div>
-          <div class="information">
-            <div class="info-top">
-              <h1>Couch potato</h1>
-              <div class="header-logos">
-                <img src="img/info_01.png" alt="" />
-                <img src="img/heart_01.png" alt="" />
-              </div>
-            </div>
-            <div class="info-bottom">
-              <img src="img/rating_01.png" alt="" />
-              <p>49 Bewertungen</p>
-              <p>
-                Bei diesem Restaurant kannst du Stempel sammeln. Stelle beim
-                Bestellabschluss bitte sicher, dass du dich für unseren
-                Newsletter angemeldet hast, um deine Stempel per E-Mail zu
-                erhalten.
-              </p>
-            </div>
-            <div class="info-slider">
-              <img src="img/search-13-48 (1).png" alt="" />
-              <a href="">Beliebt</a>
-              <a href="">Salate</a>
-              <a href="">Pizza Klassiker</a>
-              <a href="">Gourmet Pizza</a>
-              <a href="">Burger</a>
-              <a href="">Beilagen</a>
-              <img src="img/arrow-25-48.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="content-bottom">
-          <h2>Beliebt</h2>
-          <div id="content"></div>
-          <div class="impressum">
-            <h3>Impressum</h3>
-            <span>
-              <p>CookForYou GmbH</p>
-              Musterstraße 32<br />
-              87435 Kempten (Allgäu)<br />
-              Gesetzlicher Vertreter: Gloria Schaffarczyk<br />
-              Sende uns eine E-Mail<br />
-              Unternehmensregister: Kempten<br />
-              Unternehmensregister-Nr: 09763000<br />
-              Plattform der EU-Kommission zur Online-Streitbeilegung:
-              https://ec.europa.eu/consumers/odr<br />
-              Wir sind ein professioneller Anbieter.<br />
-              Erfahre mehr darüber, wie wir gemeinsam mit CookForYou.de die
-              Verbraucherverantwortung übernehmen.
-            </span>
-          </div>
-        </div>
+      <div class="nav-center">
+        <h3>Speisekarte</h3>
       </div>
-      <div class="basket-div" id="basket-div">
-        <h2>Warenkorb</h2>
-        <div class="basket" id="basket"></div>
-        <div class="sum" id="sum"></div>
+      <div class="nav-right">
+        <img src="img/german-round.png" alt="" />
+        <img src="img/menu-4-48 (1).png" alt="" />
       </div>
     </div>
-    <footer class="footer">
-      <div class="footer-top">
-        <a href="">Ein Restaurant empfehlen</a>
-        <a href="">Ein Restaurant anmelden</a>
-        <a href="">Jobs</a>
-        <a href="">AGB</a>
-        <a href="">Datenschutzerklärung</a>
-        <a href="">Impressum</a>
-        <a href="">Verwendung von Cookies</a>
-        <a href="">Bug Bounty</a>
-        <a href="">Ethik-Hotline</a>
+  </header>
+  <div class="main">
+    <div class="menu">
+      <div class="content-top">
+        <div class="header-img">
+          <img src="img/couch-potato4.png" alt="" />
+        </div>
+        <div class="information">
+          <div class="info-top">
+            <h1>Couch potato</h1>
+            <div class="header-logos">
+              <img src="img/info_01.png" alt="" />
+              <img src="img/heart_01.png" alt="" />
+            </div>
+          </div>
+          <div class="info-bottom">
+            <img src="img/rating_01.png" alt="" />
+            <p>49 Bewertungen</p>
+            <p>
+              Bei diesem Restaurant kannst du Stempel sammeln. Stelle beim
+              Bestellabschluss bitte sicher, dass du dich für unseren
+              Newsletter angemeldet hast, um deine Stempel per E-Mail zu
+              erhalten.
+            </p>
+          </div>
+          <div class="info-slider">
+            <img src="img/search-13-48 (1).png" alt="" />
+            <a href="">Beliebt</a>
+            <a href="">Salate</a>
+            <a href="">Pizza Klassiker</a>
+            <a href="">Gourmet Pizza</a>
+            <a href="">Burger</a>
+            <a href="">Beilagen</a>
+            <img src="img/arrow-25-48.png" alt="" />
+          </div>
+        </div>
       </div>
-      <div class="footer-bottom">© 2022 Lieferando</div>
-    </footer>
-  </body>
+      <div class="content-bottom">
+        <h2>Beliebt</h2>
+        <div id="content"></div>
+        <div class="impressum">
+          <h3>Impressum</h3>
+          <span>
+            <p>CookForYou GmbH</p>
+            Musterstraße 32<br />
+            87435 Kempten (Allgäu)<br />
+            Gesetzlicher Vertreter: Gloria Schaffarczyk<br />
+            Sende uns eine E-Mail<br />
+            Unternehmensregister: Kempten<br />
+            Unternehmensregister-Nr: 09763000<br />
+            Plattform der EU-Kommission zur Online-Streitbeilegung:
+            https://ec.europa.eu/consumers/odr<br />
+            Wir sind ein professioneller Anbieter.<br />
+            Erfahre mehr darüber, wie wir gemeinsam mit CookForYou.de die
+            Verbraucherverantwortung übernehmen.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="basket-div" id="basket-div">
+      <h2>Warenkorb</h2>
+      <div class="basket" id="basket"></div>
+      <div class="sum" id="sum"></div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-top">
+      <a href="">Ein Restaurant empfehlen</a>
+      <a href="">Ein Restaurant anmelden</a>
+      <a href="">Jobs</a>
+      <a href="">AGB</a>
+      <a href="">Datenschutzerklärung</a>
+      <a href="">Impressum</a>
+      <a href="">Verwendung von Cookies</a>
+      <a href="">Bug Bounty</a>
+      <a href="">Ethik-Hotline</a>
+    </div>
+    <div class="footer-bottom">© 2022 Lieferando</div>
+  </footer>
+</body>
+
 </html>

@@ -1,7 +1,7 @@
-* {
+/* * {
     box-sizing: border-box;
     background: rgb(0 100 0 / 0.1) !important;
-}
+} */
 
 body {
     margin: 0;
@@ -233,13 +233,16 @@ header {
     position: relative;
 }
 
-.header-logo img {
+.header-img img {
     height: 72px;
     width: 72px;
     display: block;
     position: absolute;
-    top: 36%;
-    left: 5%;
+    left: 20%;
+    right: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -20px;
 }
 
 .header-logo {
