@@ -160,5 +160,13 @@ function decreaseAmount(i) { // forgot i
 }
 
 function order() {
-    alert("Vielen Dank für Ihre Bestellung. Sie werden nun zu PayPal weitergeleitet.");
+    alert("Vielen Dank für deine Bestellung. Du wirst nun zu PayPal weitergeleitet.");
+}
+
+function openResponsiveBasket() {
+    document.getElementById('shopping-basket').style.display = "block";
+}
+
+function closeResponsiveBasket() {
+    document.getElementById('shopping-basket').style.display = "none";
 }
