@@ -43,7 +43,6 @@ header {
 }
 
 .nav-bar {
-    width: 100%;
     height: 48px;
     display: flex;
     align-items: center;
@@ -286,7 +285,6 @@ header {
 }
 
 .footer {
-    width: 100%;
     height: 100px;
     background-color: #262626;
     color: white;
@@ -305,38 +303,40 @@ header {
     font-size: 14px;
 }
 
-.overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
 .responsive-basket {
     text-align: center;
     position: fixed;
-    bottom: 24px;
-    left: 24px;
-    right: 24px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.mobile-button-bg {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 1px #dedede;
 }
 
 .responsive-basket button {
+    background-color: #f36805;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 50px;
+    padding: 8px;
+    border: solid 1px #f36805;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 48px;
-    background-color: #FF8B03;
     border: none;
-    border-radius: 50px;
-}
-
-.responsive-basket button img {
-    height: 24px;
-    margin-right: 12px;
-}
-
-.responsive-basket button span {
-    color: white;
-    font-size: 20px;
 }
 
 .responsive-basket-content {
@@ -366,4 +366,65 @@ header {
     .responsive-basket {
         display: block;
     }
+
+    .information {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+    
+    .content-bottom {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+    .nav-right img {
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 300px) {
+
+    .information {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .nav-bar {
+        height: 126px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+    }
+
+    .nav-bar img {
+        height: 34px;
+    }
+
+    .info-slider {
+        gap: 12px;
+    }
+
+    .content-bottom {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .impressum {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .mobile-button-bg {
+        height: 150px;
+    }
+
+    .footer {
+        padding: 25px;
+    }
+
+
 }

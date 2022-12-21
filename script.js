@@ -164,9 +164,9 @@ function order() {
 }
 
 function openResponsiveBasket() {
-    document.getElementById('shopping-basket').style.display = "block";
+    document.getElementById('responsive-basket').style.display = "block";
 }
 
 function closeResponsiveBasket() {
-    document.getElementById('shopping-basket').style.display = "none";
+    document.getElementById('basket').style.display = "none";
 }
