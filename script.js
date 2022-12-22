@@ -163,10 +163,16 @@ function order() {
     alert("Vielen Dank für deine Bestellung. Du wirst nun zu PayPal weitergeleitet.");
 }
 
-function openResponsiveBasket() {
-    document.getElementById('responsive-basket').style.display = "block";
-}
+/* function toggleResponsiveBasket() {
+    var basket = document.getElementById("basket-div")
+    basket.classList.toggle("responsive-basket");
+} */
 
-function closeResponsiveBasket() {
-    document.getElementById('basket').style.display = "none";
-}
+function toggleResponsiveBasket() {
+    var mobileBasket = document.getElementById("basket");
+    if (mobileBasket.className === "basket") {
+        mobileBasket.className = "responsive-basket";
+    } else {
+        mobileBasket.className = "basket";
+    }
+  }

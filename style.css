@@ -152,6 +152,17 @@ header {
     text-align: center;
 }
 
+.responsive-basket {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    padding: 100px;
+}
+
 .basket img {
     width: 48px;
     height: 48px;
@@ -303,7 +314,7 @@ header {
     font-size: 14px;
 }
 
-.responsive-basket {
+.responsive-basket-button {
     text-align: center;
     position: fixed;
     bottom: 0px;
@@ -314,7 +325,7 @@ header {
 .mobile-button-bg {
     display: flex;
     width: 100%;
-    height: 200px;
+    height: 150px;
     background-color: white;
     z-index: 2;
     align-items: center;
@@ -322,7 +333,7 @@ header {
     border-top: solid 1px #dedede;
 }
 
-.responsive-basket button {
+.responsive-basket-button button {
     background-color: #f36805;
     color: white;
     font-weight: 500;
@@ -339,7 +350,7 @@ header {
     border: none;
 }
 
-.responsive-basket-content {
+.responsive-basket {
     background-color: white;
     position: fixed;
     top: 0;
@@ -350,20 +361,12 @@ header {
     padding: 100px;
 }
 
-.responsive-basket-content img {
-    height: 24px;
-    position: absolute;
-    top: 36px;
-    right: 36px;
-}
-
-
 @media (max-width: 1000px) {
     .basket-div {
         display: none;
     }
 
-    .responsive-basket {
+    .responsive-basket-button {
         display: block;
     }
 
