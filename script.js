@@ -44,6 +44,7 @@ function renderBasket() {
 }
 
 function renderEmptyBasket() {
+    updateBasket();
     let emptyBasket = document.getElementById('basket');
     emptyBasket.innerHTML = '';
     emptyBasket.innerHTML = `
@@ -169,10 +170,20 @@ function order() {
 } */
 
 function toggleResponsiveBasket() {
-    var mobileBasket = document.getElementById("basket");
-    if (mobileBasket.className === "basket") {
+    var mobileBasket = document.getElementById("basket-div");
+    if (mobileBasket.className === "basket-div") {
         mobileBasket.className = "responsive-basket";
+        scrollStop();
     } else {
-        mobileBasket.className = "basket";
+        mobileBasket.className = "basket-div";
+        scrollStart();
     }
   }
+
+function scrollStop() {
+    document.getElementById('body').classList.add('scrollStop');
+}
+
+function scrollStart() {
+    document.getElementById('body').classList.remove('scrollStop');
+}

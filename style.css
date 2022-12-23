@@ -161,6 +161,7 @@ header {
     left: 0;
     z-index: 3;
     padding: 100px;
+    overflow-y: scroll;
 }
 
 .basket img {
@@ -358,12 +359,30 @@ header {
     bottom: 0;
     left: 0;
     z-index: 3;
-    padding: 100px;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
+.close {
+    flex-direction: row-reverse;
+}
+
+.scrollStop {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    overflow: hidden;
+ }
+
 @media (max-width: 1000px) {
+
     .basket-div {
         display: none;
+    }
+
+    .close {
+        display: flex;
     }
 
     .responsive-basket-button {
