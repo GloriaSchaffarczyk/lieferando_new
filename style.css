@@ -29,6 +29,10 @@ p {
     display: none;
 }
 
+.sticky {
+    position: sticky;
+}
+
 header {
     box-shadow: 1px 3px 9px 1px rgb(140 140 140 / 10%);
 }
