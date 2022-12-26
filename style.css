@@ -381,7 +381,7 @@ header {
 
 @media (max-width: 1000px) {
 
-    .basket-div {
+    .outerbasket {
         display: none;
     }
 

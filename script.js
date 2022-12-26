@@ -170,12 +170,12 @@ function order() {
 } */
 
 function toggleResponsiveBasket() {
-    var mobileBasket = document.getElementById("basket-div");
-    if (mobileBasket.className === "basket-div") {
+    var mobileBasket = document.getElementById("outerbasket");
+    if (mobileBasket.className === "outerbasket") {
         mobileBasket.className = "responsive-basket";
         scrollStop();
     } else {
-        mobileBasket.className = "basket-div";
+        mobileBasket.className = "outerbasket";
         scrollStart();
     }
   }
