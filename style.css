@@ -31,6 +31,7 @@ p {
 
 .sticky {
     position: sticky;
+    top: 0;
 }
 
 header {
@@ -149,7 +150,6 @@ header {
     flex-grow: 0;
     padding-left: 32px;
     padding-right: 32px;
-    position: sticky;
     flex-shrink: 0;
     box-shadow: -11px 7px 15px 1px rgba(140, 140, 140, 0.15);
     text-align: center;
