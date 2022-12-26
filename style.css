@@ -31,7 +31,7 @@ p {
 
 .sticky {
     position: sticky;
-    top: 0;
+    top: 20px;
 }
 
 header {
@@ -144,7 +144,7 @@ header {
     margin-right: 18px;
 }
 
-.basket-div {
+.outerbasket {
     margin-top: 12px;
     flex-basis: 20%;
     flex-grow: 0;
@@ -230,6 +230,7 @@ header {
     border: solid 1px #f36805;
     cursor: pointer;
     width: 300px;
+    margin-bottom: 50px;
 }
 
 .order-button:hover {
