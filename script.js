@@ -91,7 +91,7 @@ function basketHTML(basketAmount, basketPrice, basketDish, i) {
 }
 
 function addToBasket(i) {
-    let index = basketDishes.indexOf(basketDishes[i]);
+    let index = basketDishes.indexOf(dishes[i]);
 
     if (index == -1) {
         basketDishes.push(dishes[i]);
