@@ -164,11 +164,6 @@ function order() {
     alert("Vielen Dank für deine Bestellung. Du wirst nun zu PayPal weitergeleitet.");
 }
 
-/* function toggleResponsiveBasket() {
-    var basket = document.getElementById("basket-div")
-    basket.classList.toggle("responsive-basket");
-} */
-
 function toggleResponsiveBasket() {
     var mobileBasket = document.getElementById("outerbasket");
     if (mobileBasket.className === "outerbasket") {
